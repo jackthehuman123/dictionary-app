@@ -43,6 +43,6 @@ form.addEventListener("submit", async function (e) {
     // For CSS transition
     document.body.classList.add("moved-up");
   } catch (err) {
-    alert("Unexpected error");
+    alert("Invalid word");
   }
 });
