@@ -1,0 +1,74 @@
+/* REMINDER: Might want to learn some transition */
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* initially center everything */
+  transition: all 0.5s ease-in-out;
+  background-color: #f9f9f9;
+}
+
+/* Moved up display area in JS */
+body.moved-up {
+  justify-content: flex-start; /* move everything to the top */
+  padding-top: 5vh;
+}
+
+.header {
+  letter-spacing: 4px;
+  display: block;
+  margin-top: 5vh;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  transition: transform 0.5s ease;
+}
+
+form {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  width: 50rem;
+  transition: transform 0.5s ease;
+}
+
+.form-control input {
+  font-size: larger;
+  padding: 1rem;
+  width: 50rem;
+  border: 2px solid gray;
+  border-radius: 40px;
+  padding-left: 30px;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease;
+}
+
+.form-control input:hover {
+  transform: scale(1.01);
+}
+
+.display-area {
+  margin: 5vh auto;
+  line-height: 2rem;
+  max-width: 90vh;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  padding: 2rem;
+  font-size: 1.5rem;
+}
+
+/* Moved up display area in JS */
+body.moved-up .display-area {
+  opacity: 1;
+  pointer-events: auto;
+}
