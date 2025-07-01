@@ -1,4 +1,11 @@
 const form = document.querySelector("form");
+const button = document.getElementById("dark-mode");
+
+button.addEventListener("click", function (e) {
+  e.preventDefault();
+
+  document.body.classList.toggle("dark-mode");
+});
 
 form.addEventListener("submit", async function (e) {
   e.preventDefault();
@@ -43,6 +50,6 @@ form.addEventListener("submit", async function (e) {
     // For CSS transition
     document.body.classList.add("moved-up");
   } catch (err) {
-    alert("Invalid word");
+    alert("Unexpected error");
   }
 });
