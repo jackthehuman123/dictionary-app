@@ -1,55 +1,32 @@
-/* REMINDER: Might want to learn some transition */
+html {
+  font-family: sans-serif;
+  font-size: 16px;
+}
 
 body {
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* initially center everything */
-  transition: all 0.5s ease-in-out;
-  background-color: #f9f9f9;
 }
 
-/* Moved up display area in JS */
-body.moved-up {
-  justify-content: flex-start; /* move everything to the top */
-  padding-top: 5vh;
-}
-
-.header {
-  letter-spacing: 4px;
-  display: block;
-  margin-top: 5vh;
-  font-size: 3rem;
-  text-align: center;
-  margin-bottom: 2rem;
-  transition: transform 0.5s ease;
-}
-
-form {
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  width: 50rem;
-  transition: transform 0.5s ease;
+header {
+  font-size: 5em;
+  letter-spacing: 0.05em;
+  margin-top: 2em;
 }
 
 .form-control input {
-  font-size: larger;
-  padding: 1rem;
-  width: 50rem;
-  border: 2px solid gray;
-  border-radius: 40px;
-  padding-left: 30px;
-  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.1);
-  transition: transform 0.5s ease;
+  padding: 0.3em 1em;
+  margin-top: 0.5em;
+  font-size: 2em;
+  width: 40em;
+  border-radius: 50px;
+  border: 2px solid rgba(0, 0, 0, 0.5);
 }
 
-.form-control input:hover {
-  transform: scale(1.01);
+body.moved-up {
+  justify-content: flex-start; /* move everything to the top */
+  padding-top: 5vh;
 }
 
 .display-area {
@@ -67,8 +44,60 @@ form {
   font-size: 1.5rem;
 }
 
-/* Moved up display area in JS */
 body.moved-up .display-area {
   opacity: 1;
   pointer-events: auto;
+}
+
+@media (max-width: 400px) {
+  header {
+    font-size: 3em;
+    margin-top: 1em;
+    margin-bottom: 3em;
+  }
+
+  .form-control input {
+    border-radius: 50px;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    width: 20em;
+    height: 2.5em;
+    font-size: 1em;
+    transform: ease 1s;
+  }
+
+  .form-control input:hover {
+    transform: scale(1.01);
+  }
+
+  button {
+    border: none;
+    background-color: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    bottom: 1.5em;
+    right: 1.5em;
+    font-size: 1em;
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+  }
+
+  .display-area {
+    margin: 5vh auto;
+    line-height: 1.5em;
+    max-width: 80vh;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    padding: 2rem;
+    font-size: 1.5rem;
+  }
+
+  body.moved-up header {
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+  }
 }
